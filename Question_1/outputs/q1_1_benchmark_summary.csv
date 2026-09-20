@@ -1,0 +1,6 @@
+Market,Currency,ARIMA_RMSE,ARIMA_MAPE_%,LightGBM_RMSE,LightGBM_MAPE_%,Best_Model,ML_Error_Reduction_%
+California,USD,1.144,2.92,1.449,3.82,ARIMA (Classical),-30.75
+China_ETS,CNY,3.008,2.19,4.635,3.28,ARIMA (Classical),-49.86
+EU_ETS,EUR,2.278,2.22,2.601,2.55,ARIMA (Classical),-14.83
+RGGI,USD,0.523,2.17,0.734,3.17,ARIMA (Classical),-45.91
+UK_ETS,GBP,2.148,3.69,3.387,6.01,ARIMA (Classical),-62.76

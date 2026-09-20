@@ -1,0 +1,5 @@
+Model,Train_R2,CV_R2_Mean,CV_R2_Std,Test_R2,Test_RMSE,Test_MAE
+Linear Regression (OLS),0.8241,0.8101,0.0381,0.798,3.272,2.146
+Ridge Regression (L2),0.8154,0.8041,0.0405,0.7842,3.382,2.216
+Random Forest Regressor,0.9906,0.9224,0.0277,0.9449,1.709,0.901
+LightGBM Regressor,0.9893,0.9327,0.0248,0.9264,1.975,0.978
