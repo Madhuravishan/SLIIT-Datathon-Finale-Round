@@ -537,11 +537,11 @@ cells.append(make_cell("markdown", r"""---
 
 ### 1. The Scientific Verdict: $H_0$ is Officially Rejected!
 - In **Directional Price Movement Classification**, adding cross-dataset event features produced a **positive accuracy lift across ALL 5 global carbon markets**:
-  - `UK_ETS`: **$+1.19\%$ Accuracy Lift**
-  - `RGGI`: **$+0.99\%$ Accuracy Lift**
-  - `EU_ETS`: **$+0.92\%$ Accuracy Lift** (ROC-AUC rose to $0.507$)
-  - `China_ETS`: **$+0.82\%$ Accuracy Lift** (ROC-AUC surged from $0.537 \to 0.588$)
-  - `California`: **$+0.78\%$ Accuracy Lift**
+  - **UK ETS**: **$+1.19\%$ Accuracy Lift** (51.78% $\to$ 52.96%)
+  - **RGGI (US)**: **$+0.99\%$ Accuracy Lift** (49.18% $\to$ 50.16%)
+  - **EU ETS**: **$+0.92\%$ Accuracy Lift** (48.49% $\to$ 49.40%, AUC rose to $0.507$)
+  - **China ETS**: **$+0.82\%$ Accuracy Lift** (53.28% $\to$ 54.10%, AUC surged from $0.537 \to 0.588$)
+  - **California**: **$+0.78\%$ Accuracy Lift** (49.53% $\to$ 50.31%)
 - **Conclusion**: Real-world climate disasters and international policy summits **do systematically add predictive value to carbon markets**, definitively verifying the hypothesis.
 
 ### 2. The Core Drivers of Market Reactions:
