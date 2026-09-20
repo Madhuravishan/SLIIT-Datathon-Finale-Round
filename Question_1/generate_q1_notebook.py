@@ -78,7 +78,7 @@ print(f"CO2 Emissions: {len(df_co2):,} rows ({df_co2['country'].nunique()} count
 print(f"Missing Values: Carbon={df_carbon.isna().sum().sum()}, Energy={df_energy.isna().sum().sum()}, CO2={df_co2.isna().sum().sum()}")"""))
 
 # Section 3: Question 1.1 Markdown Narrative
-cells.append(make_cell("markdown", """---
+cells.append(make_cell("markdown", r"""---
 ## 3. Question 1.1: Carbon Price Forecasting (Next 30 Trading Days)
 
 ### 3.1 Methodological Justification: Classical Econometrics vs. Machine Learning
@@ -227,7 +227,7 @@ print("=== 30-DAY CARBON PRICE FORECASTING BENCHMARK TABLE ===")
 display(df_bench)"""))
 
 # Section 4: Question 1.2 Markdown Narrative
-cells.append(make_cell("markdown", """---
+cells.append(make_cell("markdown", r"""---
 ## 4. Question 1.2: Predicting CO₂ Emissions from Energy Mix Profile
 
 ### 4.1 Domain-Driven Feature Engineering (Combustion Chemistry & Transition Dynamics)
@@ -359,16 +359,16 @@ plt.savefig(os.path.join(OUTPUT_DIR, 'q1_2_actual_vs_predicted.png'), dpi=300, b
 plt.show()"""))
 
 # Section 5: Conclusion & Transition
-cells.append(make_cell("markdown", """---
+cells.append(make_cell("markdown", r"""---
 ## 5. Summary Findings & Bridge to Question 2 and Question 3
 
 ### Key Conclusions for Question 1:
 1. **1.1 Carbon Price Forecasting**:
-   - Machine Learning (LightGBM with multi-scale lag features) significantly outperforms classical ARIMA across all ETS markets by capturing asymmetric return dynamics, volatility clustering, and non-linear calendar seasonality.
-   - The out-of-sample 30-day forecast demonstrates robust stability without divergence.
+   - In pure closed-loop autoregression over a 30-day trading horizon, **Classical ARIMA** achieved lower out-of-sample error (averaging **$2.6\%$ MAPE** vs. LightGBM's $3.8\%$). This occurs because recursive ML lag models suffer from compounding drift when feeding their own synthetic predictions back into the feature buffer without external anchoring.
+   - This establishes our rigorous baseline for **Question 2**, where we test whether exogenous shock signals (climate disasters and policy treaties) provide the non-linear predictive lift needed for ML to excel.
 2. **1.2 CO₂ Emissions from Energy Mix**:
-   - The non-linear Random Forest and LightGBM models achieve exceptional predictive accuracy ($R^2 > 0.90$), vastly outperforming simple linear models.
-   - Domain-engineered features (`fuel_carbon_intensity_idx`, `clean_to_fossil_ratio`, and `fossil_gdp_interaction`) emerged as top predictors, confirming that stoichiometric fuel composition and economic intensity drive per-capita emissions far more than gross fuel percentages alone.
+   - The non-linear **Random Forest Regressor** achieved exceptional predictive accuracy (**Test $R^2 = 0.9449$**, Test RMSE = $1.709\text{ t/person}$), outperforming linear models by $>14\%$ in explained variance.
+   - Domain-engineered features (`fossil_gdp_interaction`, `fuel_carbon_intensity_idx`, and `clean_to_fossil_ratio`) emerged as top predictors, confirming that stoichiometric fuel composition and economic intensity drive per-capita emissions far more than gross fuel percentages alone.
 
 ### Transition Roadmap:
 - **Question 2**: We will now take our baseline carbon price model from 1.1 and test whether cross-dataset proximity features engineered from `climate_events.csv` provide statistically significant predictive lift.
