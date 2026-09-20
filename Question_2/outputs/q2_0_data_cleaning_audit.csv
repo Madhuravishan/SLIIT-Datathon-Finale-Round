@@ -1,0 +1,3 @@
+Dataset,Total_Rows,Missing_Values,Duplicates,Temporal_Span,Scope,Hygiene_Status
+carbon_prices_daily.csv,15866,0,0,2005-04-22 to 2026-04-30,"5 Markets (California, China_ETS, EU_ETS, RGGI, UK_ETS)","PASSED (0 nulls, 0 dupes)"
+climate_events.csv,50,0,0,2003-08-01 to 2026-04-10,50 Events (5 Canonical Categories),PASSED (15 weekend dates smoothed to trading open)

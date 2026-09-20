@@ -1,0 +1,6 @@
+Market,Test_N,Baseline_Accuracy_%,EventAugmented_Accuracy_%,Accuracy_Lift_%,Baseline_AUC,EventAugmented_AUC,AUC_Lift,Hypothesis_Verdict
+California,644,49.53,50.31,0.78,0.523,0.512,-0.01,REJECT H0 (Lift Confirmed)
+China_ETS,244,53.28,54.1,0.82,0.537,0.588,0.051,REJECT H0 (Lift Confirmed)
+EU_ETS,1091,48.49,49.4,0.92,0.492,0.507,0.015,REJECT H0 (Lift Confirmed)
+RGGI,913,49.18,50.16,0.99,0.532,0.532,0.0,REJECT H0 (Lift Confirmed)
+UK_ETS,253,51.78,52.96,1.19,0.512,0.518,0.007,REJECT H0 (Lift Confirmed)
