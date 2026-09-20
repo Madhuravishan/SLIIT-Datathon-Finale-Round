@@ -1,0 +1,4 @@
+Dataset,Total_Rows,Columns,Missing_Values,Duplicate_Rows,Temporal_Coverage,Entities_Covered,Data_Hygiene_Status
+carbon_prices_daily.csv,15866,5,0,0,2005-04-22 to 2026-04-30,"5 Carbon Markets (California, China_ETS, EU_ETS, RGGI, UK_ETS)","PASSED (0 nulls, 0 dupes)"
+energy_mix_yearly.csv,1350,14,0,0,2000 to 2026,50 Countries across 8 Regions,"PASSED (0 nulls, 0 dupes)"
+co2_emissions_yearly.csv,1350,8,0,0,2000 to 2026,50 Countries across 8 Regions,"PASSED (0 nulls, 0 dupes)"
