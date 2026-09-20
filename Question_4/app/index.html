@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarbonPulse OS — Enterprise Carbon Risk & Transition Intelligence</title>
+  <meta name="description" content="Predictive Carbon Intelligence, Event-Driven Shock Analytics, and Energy Transition Forecasting Platform." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <div class="nav-brand">
+      <div class="brand-logo">
+        <span class="logo-pulse"></span>
+        <span class="logo-icon">⚡</span>
+      </div>
+      <div class="brand-text">
+        <h1>CarbonPulse <span>OS</span></h1>
+        <p class="brand-subtitle">Enterprise Climate Risk & Transition Intelligence</p>
+      </div>
+    </div>
+    
+    <div class="nav-markets" id="marketNav">
+      <button class="market-pill active" data-market="EU_ETS">EU ETS <span class="pill-price">€82.40</span></button>
+      <button class="market-pill" data-market="California">California <span class="pill-price">$34.80</span></button>
+      <button class="market-pill" data-market="UK_ETS">UK ETS <span class="pill-price">£46.50</span></button>
+      <button class="market-pill" data-market="RGGI">RGGI <span class="pill-price">$17.15</span></button>
+      <button class="market-pill" data-market="China_ETS">China ETS <span class="pill-price">¥78.90</span></button>
+    </div>
+
+    <div class="nav-actions">
+      <div class="live-badge"><span class="live-dot"></span> LIVE FEEDS ACTIVE</div>
+      <button class="btn btn-outline" id="btnExport">Export TCFD Audit</button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="dashboard-grid">
+    <!-- Row 1: KPI Metric Highlights -->
+    <section class="kpi-row">
+      <div class="glass-card kpi-card">
+        <div class="kpi-header">
+          <span class="kpi-label">Active Market Allowance</span>
+          <span class="badge badge-blue" id="kpiMarketTag">EU ETS (EUR)</span>
+        </div>
+        <div class="kpi-value-row">
+          <span class="kpi-value" id="kpiCurrentPrice">€82.40</span>
+          <span class="kpi-delta positive" id="kpiPriceDelta">+1.85% (1d)</span>
+        </div>
+        <p class="kpi-subtext">30-Day Mean Reversion Forecast: <strong id="kpiForecastTarget">€84.15</strong></p>
+      </div>
+
+      <div class="glass-card kpi-card">
+        <div class="kpi-header">
+          <span class="kpi-label">#1 Predictive Event Signal</span>
+          <span class="badge badge-amber">Q2 Top Driver</span>
+        </div>
+        <div class="kpi-value-row">
+          <span class="kpi-value" id="kpiCopCountdown">56 Days</span>
+          <span class="kpi-delta alert">Pre-Summit Run-Up</span>
+        </div>
+        <p class="kpi-subtext">Next Event: <strong id="kpiNextEventName">COP30 Belém Treaty Negotiations</strong></p>
+      </div>
+
+      <div class="glass-card kpi-card">
+        <div class="kpi-header">
+          <span class="kpi-label">Stoichiometric Physics Engine</span>
+          <span class="badge badge-green">Q1.2 Model</span>
+        </div>
+        <div class="kpi-value-row">
+          <span class="kpi-value">R² = 0.945</span>
+          <span class="kpi-delta positive">+14.7% over OLS</span>
+        </div>
+        <p class="kpi-subtext">MAE Precision: <strong>0.90 t CO₂/person</strong> (50 Countries)</p>
+      </div>
+
+      <div class="glass-card kpi-card">
+        <div class="kpi-header">
+          <span class="kpi-label">Sovereign Decarbonization Rate</span>
+          <span class="badge badge-purple">Q3 Archetype</span>
+        </div>
+        <div class="kpi-value-row">
+          <span class="kpi-value">13 Leaders</span>
+          <span class="kpi-delta positive">Accelerated (-5% CAGR)</span>
+        </div>
+        <p class="kpi-subtext">Global Peak Emissions Feasible: <strong>Target 2029</strong></p>
+      </div>
+    </section>
+
+    <!-- Row 2: Price Forecasting & Shock Radar -->
+    <section class="chart-shock-row">
+      <!-- Left: 30-Day Multi-Horizon Price Forecast Curve -->
+      <div class="glass-card chart-card">
+        <div class="card-header">
+          <div>
+            <h3>30-Day Carbon Allowance Price Projection</h3>
+            <p class="card-desc">Classical ARIMA Baseline (2.6% MAPE) vs. Gradient Boosted Lag Trajectory with 95% Confidence Bounds</p>
+          </div>
+          <div class="toggle-group">
+            <button class="toggle-btn active" id="btnToggleArima">ARIMA Baseline (Q1.1)</button>
+            <button class="toggle-btn" id="btnToggleConfidence">95% Confidence Cone</button>
+          </div>
+        </div>
+        <div class="chart-container">
+          <canvas id="priceCanvas" width="800" height="340"></canvas>
+        </div>
+        <div class="chart-legend">
+          <span class="legend-item"><span class="legend-dot" style="background:#94a3b8"></span> 60-Day Historical Actuals</span>
+          <span class="legend-item"><span class="legend-dot" style="background:#10b981"></span> Actual Held-Out Test</span>
+          <span class="legend-item"><span class="legend-dot" style="background:#3b82f6"></span> ARIMA Mean-Reverting Path (2.6% MAPE)</span>
+          <span class="legend-item"><span class="legend-dot" style="background:rgba(59, 130, 246, 0.25)"></span> Upper/Lower Confidence Cone</span>
+        </div>
+      </div>
+
+      <!-- Right: Event Shock Radar & Policy Countdown -->
+      <div class="glass-card shock-card">
+        <div class="card-header">
+          <div>
+            <h3>Event Shock & Regulatory Radar</h3>
+            <p class="card-desc">Cross-Dataset Signal Engine (Q2 Proof: Null Rejected)</p>
+          </div>
+          <span class="badge badge-red">Active Shock Engine</span>
+        </div>
+
+        <div class="radar-content">
+          <!-- Countdown Box -->
+          <div class="radar-countdown-box">
+            <div class="countdown-circle">
+              <span class="countdown-number" id="radarDaysVal">56</span>
+              <span class="countdown-unit">DAYS LEFT</span>
+            </div>
+            <div class="countdown-info">
+              <h4>COP30 Belém Climate Summit</h4>
+              <p>UNFCCC Treaty Negotiation Session</p>
+              <div class="status-indicator">
+                <span class="pulse-dot"></span>
+                <span>Pre-Summit Speculative Accumulation: <strong>High Exposure</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shock Decay Gauge -->
+          <div class="shock-gauge-section">
+            <div class="gauge-header">
+              <span>Disaster Memory Shock Decay (&tau; = 30d Half-Life)</span>
+              <span class="gauge-score" id="shockScoreVal">Severity 7.8 / 10</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" id="shockProgressFill" style="width: 78%;"></div>
+            </div>
+            <p class="gauge-caption">Elevated volatility risk active from Category 4 Atlantic Hurricane &amp; Iberian Drought disruptions.</p>
+          </div>
+
+          <!-- Interactive Event Injection Simulator -->
+          <div class="shock-simulator-box">
+            <h4>Simulate Market Shock Event:</h4>
+            <div class="sim-buttons">
+              <button class="sim-btn" data-shock="fukushima">Nuclear Baseload Trip (+11.4% CAR)</button>
+              <button class="sim-btn" data-shock="fit55">Statutory Cap Cut (+15.2% CAR)</button>
+              <button class="sim-btn" data-shock="cyclone">Severe Port Flood (+6.8% CAR)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Row 3: Stoichiometric Energy Transition Simulator (Q1.2 & Q3) -->
+    <section class="simulator-row">
+      <div class="glass-card sim-card">
+        <div class="card-header">
+          <div>
+            <h3>Enterprise Transition Scenario Simulator &amp; 2030 Cost Estimator</h3>
+            <p class="card-desc">Powered by Q1.2 Random Forest Physics Engine (R² = 0.945) and Q3 Transition Scenario Modeling</p>
+          </div>
+          <div class="preset-selector">
+            <label>Load Preset Archetype:</label>
+            <select id="presetSelect">
+              <option value="germany">Germany (Moderate Transition Leader)</option>
+              <option value="poland">Poland (Heavy Coal Baseload)</option>
+              <option value="china">China (Massive Hybrid Grid)</option>
+              <option value="custom" selected>Custom Enterprise Scenario</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="sim-grid">
+          <!-- Left: Interactive Fuel Share Sliders -->
+          <div class="sim-controls">
+            <div class="slider-group">
+              <div class="slider-label-row">
+                <span class="fuel-tag coal">Coal Share</span>
+                <span class="slider-val" id="valCoal">25%</span>
+              </div>
+              <input type="range" min="0" max="80" value="25" class="slider" id="sliderCoal">
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-label-row">
+                <span class="fuel-tag oil">Oil &amp; Petroleum</span>
+                <span class="slider-val" id="valOil">20%</span>
+              </div>
+              <input type="range" min="0" max="60" value="20" class="slider" id="sliderOil">
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-label-row">
+                <span class="fuel-tag gas">Natural Gas (Bridge Fuel)</span>
+                <span class="slider-val" id="valGas">25%</span>
+              </div>
+              <input type="range" min="0" max="70" value="25" class="slider" id="sliderGas">
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-label-row">
+                <span class="fuel-tag nuclear">Nuclear Power</span>
+                <span class="slider-val" id="valNuclear">10%</span>
+              </div>
+              <input type="range" min="0" max="50" value="10" class="slider" id="sliderNuclear">
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-label-row">
+                <span class="fuel-tag renewables">Solar, Wind &amp; Hydro</span>
+                <span class="slider-val" id="valRenewables">20%</span>
+              </div>
+              <input type="range" min="0" max="80" value="20" class="slider" id="sliderRenewables">
+            </div>
+
+            <div class="sum-indicator-row">
+              <span>Grid Fuel Sum:</span>
+              <strong id="fuelSumDisplay" class="sum-ok">100.0% (Physically Balanced)</strong>
+            </div>
+          </div>
+
+          <!-- Middle: Real-Time Calculated Physics Metrics -->
+          <div class="sim-calculations">
+            <h4>Live Stoichiometric Model Calculations</h4>
+            
+            <div class="calc-metric-box">
+              <span class="calc-label">Predicted National CO₂ Footprint</span>
+              <span class="calc-value" id="calcPredEmissions">6.85 <small>t / person</small></span>
+              <span class="calc-benchmark" id="calcVsBaseline">-18.4% vs. 2020 Baseline</span>
+            </div>
+
+            <div class="calc-metric-box">
+              <span class="calc-label">Combustion Carbon Intensity Index</span>
+              <span class="calc-value" id="calcCarbonIdx">53.5 <small>points</small></span>
+              <span class="calc-benchmark">IPCC Stoichiometric Chemistry (Q1.2)</span>
+            </div>
+
+            <div class="calc-metric-box">
+              <span class="calc-label">Est. 2030 Enterprise Compliance Liability</span>
+              <span class="calc-value highlight" id="calcComplianceCost">€13.7M <small>/ year</small></span>
+              <span class="calc-benchmark">Under €95/t projected 2030 allowance price</span>
+            </div>
+          </div>
+
+          <!-- Right: 2026-2030 Scenario Trajectory Curves -->
+          <div class="sim-pathway-box">
+            <h4>2026–2030 Decarbonization Pathways</h4>
+            <div class="pathway-chart-wrap">
+              <canvas id="scenarioCanvas" width="340" height="190"></canvas>
+            </div>
+            <div class="pathway-legend">
+              <span class="p-item"><span class="p-dot" style="background:#ef4444"></span> BAU (+1.2% CAGR)</span>
+              <span class="p-item"><span class="p-dot" style="background:#f59e0b"></span> Moderate (-2% CAGR)</span>
+              <span class="p-item"><span class="p-dot" style="background:#10b981"></span> Accelerated (-5% CAGR)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Audit Modal -->
+  <div class="modal-overlay" id="auditModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Enterprise TCFD &amp; CSRD Climate Audit Generated</h3>
+        <button class="close-btn" id="btnCloseModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Compliance Report #CP-2026-9041</strong> has been successfully compiled from active model feeds:</p>
+        <ul class="audit-list">
+          <li>✅ Verified 30-day allowance exposure hedging: <strong>€82.40 - €86.10 range</strong></li>
+          <li>✅ Stress-tested against COP30 Belém anticipatory policy surge (+11.8%)</li>
+          <li>✅ Model-calibrated against Random Forest stoichiometric weights ($R^2 = 0.945$)</li>
+          <li>✅ Aligned with Corporate Sustainability Due Diligence Directive (CSDDD)</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="btnDownloadMock">Download Official Audit PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <p>CarbonPulse OS &copy; 2026 | CodeFest Datathon Finalist Solution | Models Trained on Verified Historical Datasets (2000–2026)</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

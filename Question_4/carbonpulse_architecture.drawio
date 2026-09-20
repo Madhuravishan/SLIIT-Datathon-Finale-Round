@@ -1,0 +1,122 @@
+<mxfile host="app.diagrams.net" modified="2026-09-20T15:00:00.000Z" agent="Antigravity" version="21.0.0">
+  <diagram id="carbonpulse-arch" name="CarbonPulse OS Architecture">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#0f172a" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- Layer 1 Container -->
+        <mxCell id="L1" value="LAYER 1: REAL-TIME INGESTION ENGINE" style="swimlane;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#3b82f6;fontColor=#ffffff;fontStyle=1;startSize=30;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="1080" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="D1" value="Carbon Exchange Feeds&#xa;(ICE, EEX, KRX, CA ARB)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#3b82f6;fontColor=#93c5fd;fontStyle=1;" vertex="1" parent="L1">
+          <mxGeometry x="20" y="45" width="230" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="D2" value="Extreme Weather Feeds&#xa;(NOAA, GDACS Hurricanes/Floods)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#3b82f6;fontColor=#93c5fd;fontStyle=1;" vertex="1" parent="L1">
+          <mxGeometry x="290" y="45" width="230" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="D3" value="UNFCCC &amp; Treaty Feeds&#xa;(COP Summits, Cap Reforms)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#3b82f6;fontColor=#93c5fd;fontStyle=1;" vertex="1" parent="L1">
+          <mxGeometry x="560" y="45" width="230" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="D4" value="IEA Energy Mix Catalogs&#xa;(Coal, Oil, Gas, Nuclear, Renewables)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#3b82f6;fontColor=#93c5fd;fontStyle=1;" vertex="1" parent="L1">
+          <mxGeometry x="830" y="45" width="230" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- Layer 2 Container -->
+        <mxCell id="L2" value="LAYER 2: EVENT HARMONIZATION &amp; FEATURE ENGINEERING PIPELINE" style="swimlane;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#10b981;fontColor=#ffffff;fontStyle=1;startSize=30;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="1080" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="F1" value="Trading Calendar Smoothing&#xa;(Weekend/Holiday Roll-Forward)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#10b981;fontColor=#6ee7b7;fontStyle=1;" vertex="1" parent="L2">
+          <mxGeometry x="20" y="45" width="230" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="F2" value="Event Proximity &amp; Shock Decay&#xa;(Days to Policy, Decay τ=7d/30d)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#10b981;fontColor=#6ee7b7;fontStyle=1;" vertex="1" parent="L2">
+          <mxGeometry x="290" y="45" width="230" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="F3" value="Stoichiometric Chemistry&#xa;(Combustion Index &amp; Fossil-GDP)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#10b981;fontColor=#6ee7b7;fontStyle=1;" vertex="1" parent="L2">
+          <mxGeometry x="560" y="45" width="230" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="F4" value="Jurisdiction Alignment&#xa;(EU, California, RGGI, UK, China)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#10b981;fontColor=#6ee7b7;fontStyle=1;" vertex="1" parent="L2">
+          <mxGeometry x="830" y="45" width="230" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- Layer 3 Container -->
+        <mxCell id="L3" value="LAYER 3: CORE AI &amp; QUANTITATIVE ANALYTICS ENGINE" style="swimlane;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#8b5cf6;fontColor=#ffffff;fontStyle=1;startSize=30;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="360" width="1080" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="M1" value="Module 1: 30d Baseline Forecaster&#xa;(Classical ARIMA - 2.6% MAPE - Q1.1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#8b5cf6;fontColor=#c4b5fd;fontStyle=1;" vertex="1" parent="L3">
+          <mxGeometry x="20" y="45" width="230" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="M2" value="Module 2: Event Shock Engine&#xa;(LightGBM Classifier Lift - Q2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#8b5cf6;fontColor=#c4b5fd;fontStyle=1;" vertex="1" parent="L3">
+          <mxGeometry x="290" y="45" width="230" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="M3" value="Module 3: Stoichiometric Simulator&#xa;(Random Forest R²=0.945 - Q1.2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#8b5cf6;fontColor=#c4b5fd;fontStyle=1;" vertex="1" parent="L3">
+          <mxGeometry x="560" y="45" width="230" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="M4" value="Module 4: 2030 Transition Engine&#xa;(K-Means Archetypes &amp; CAGR - Q3)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#8b5cf6;fontColor=#c4b5fd;fontStyle=1;" vertex="1" parent="L3">
+          <mxGeometry x="830" y="45" width="230" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- Layer 4 Container -->
+        <mxCell id="L4" value="LAYER 4: ENTERPRISE DELIVERY &amp; INTERACTIVE DASHBOARD" style="swimlane;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#06b6d4;fontColor=#ffffff;fontStyle=1;startSize=30;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="520" width="1080" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="API" value="Enterprise API Gateway&#xa;(REST, WebSockets, Bloomberg Connector)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#f59e0b;fontColor=#fde68a;fontStyle=1;" vertex="1" parent="L4">
+          <mxGeometry x="20" y="45" width="240" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="UI1" value="Live Price Forecast Center&#xa;(30-Day Curves &amp; Confidence Bands)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#06b6d4;fontColor=#67e8f9;fontStyle=1;" vertex="1" parent="L4">
+          <mxGeometry x="300" y="45" width="230" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="UI2" value="Shock Radar &amp; Alert Center&#xa;(Pre-COP Countdown &amp; Disaster Volatility)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#06b6d4;fontColor=#67e8f9;fontStyle=1;" vertex="1" parent="L4">
+          <mxGeometry x="560" y="45" width="240" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="UI3" value="2030 Transition Simulator&#xa;(Live Mix Sliders &amp; Cost Forecasts)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#06b6d4;fontColor=#67e8f9;fontStyle=1;" vertex="1" parent="L4">
+          <mxGeometry x="830" y="45" width="230" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- Arrows / Connections -->
+        <mxCell id="e1" edge="1" parent="1" source="D1" target="F1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#3b82f6;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="D2" target="F2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#3b82f6;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="D3" target="F2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#3b82f6;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="D4" target="F3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#3b82f6;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="F1" target="M1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#10b981;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="F2" target="M2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#10b981;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="F3" target="M3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#10b981;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="M1" target="API" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#8b5cf6;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="M2" target="API" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#8b5cf6;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="M3" target="API" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#8b5cf6;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="M4" target="API" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#8b5cf6;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="API" target="UI1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#f59e0b;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="API" target="UI2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#f59e0b;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="API" target="UI3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#f59e0b;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
